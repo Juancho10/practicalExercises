@@ -3,18 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <title>Juego Piedra Papel o Tijera</title>
-    <script>
-        let PC => (min, max){};
-        let jugador = 0;
-        
-
-    </script>
 </head>
 <body>
-    <h1>Comencemos el juego</h1>
-    <!--<div>
-        <button type="button">que inicie el juego</button>
-    </div>-->
+    <h1>PIEDRA PAPEL O TIJERA</h1>
+    <div>
+        <!--<button type="button">que inicie el juego</button>-->
+        <p>Comencemos el juego contra la maquina, deberas elegir dependiendo de las siguientes instrucciones:</p>
+        <ol>
+            <li><p>el numero 1 es para 🪨</p></li>
+            <li><p>el numero 2 es para 🧻</p></li>
+            <li><p>el numero 3 es para ✂️</p></li>
+        </ol>
+        <p>Que comience el juego</p>
+    </div>
+    <script>
+        let jugador = 0;
+        jugador = prompt("toma tu eleccion");
+        //asignación de elecciones
+        if(jugador == 1){
+            console.log("el jugador eligio 🪨");
+        }else if(jugador == 2){
+            console.log("el jugador eligio 🧻");
+        }else if(jugador ==3){
+            console.log("el jugador eligio ✂️");
+        }else{
+            console.log("elegiste la 💀");
+        }
+
+        function eleccionPC(min, max){
+            return Math.floor(Math.random() * (max-min + 1)+ min)
+        }
+        let PC = eleccionPC(1,3);
+        if(PC == 1){
+            console.log("La maquina eligio 🪨");
+        }else if(PC == 2){
+            console.log("La maquina eligio 🧻");
+        }else if(PC ==3){
+            console.log("La maquina eligio ✂️");
+        }else{
+            console.log("tienes mal la formula random");
+        }
+
+    </script>
 </body>
 </html>
