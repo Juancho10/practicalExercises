@@ -14,41 +14,45 @@
         <!--<button type="button">que inicie el juego</button>-->
         <p>Comencemos el juego contra la maquina, deberas elegir dependiendo de las siguientes instrucciones:</p>
         <ol>
-            <li><p>el numero 1 es para 🪨</p></li>
+            <li><p>el numero 1 es para 🗿</p></li>
             <li><p>el numero 2 es para 🧻</p></li>
             <li><p>el numero 3 es para ✂️</p></li>
         </ol>
         <p>Que comience el juego</p>
     </div>
     <script>
-        let jugador = 0;
+        let jugador;
         //asignación de elecciones
-        function eleccion(texto,jugada){
-            let resultado;
+        function eleccion(jugada){
+            let resultado = "";
             if(jugada == 1){
-                resultado = console.log(texto+" 🪨");
+                resultado = "piedra 🗿"
             }else if(jugada == 2){
-                resultado = console.log(texto+" 🧻");
+                resultado = "Papel 🧻";
             }else if(jugada ==3){
-                resultado = console.log(texto+" ✂️");
+                resultado = "Tijera ✂️";
             }else{
-                resultado = console.log(texto+" 💀");
+                resultado = "Game Over 💀";
             }
             return resultado;
         };
+        //Elecciones de los jugaores
         function eleccionPC(min, max){
             return Math.floor(Math.random() * (max-min + 1)+ min)
         }
-        let PC = eleccionPC(1,3);
         jugador = prompt("toma tu eleccion");
-        alert(eleccion("elegiste",jugador));
-        alert(eleccion("tu rival eligio ",PC));
-        if (jugador === PC) {
+        let PC = eleccionPC(1,3);
+        //let PC = 1;
+        alert("Tu elección fue "+ eleccion(jugador));
+        alert("tu rival eligio "+ eleccion(PC));
+        
+        // Sección de validación del ganador
+        if (jugador == PC) {
             alert("EMPATE");
-        }else if (jugador = 1 && PC == 3 || jugador == 2 && PC == 1 || jugador == 3 && PC == 2) {
+        }else if (jugador == 1 && PC == 3 || jugador == 2 && PC == 1 || jugador == 3 && PC == 2) {
             alert("WINNER");
         }else{
-            alert("PERDISTE");
+            alert("PERDISTE")
         }
     </script>
 </body>
