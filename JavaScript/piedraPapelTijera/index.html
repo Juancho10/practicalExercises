@@ -78,9 +78,19 @@
                     alert("PERDISTE")
                 }
             }*/
+
         function ganador(victorias, perdidas, empates){
-            return alert("tus victorias son: "+victorias+" tus perdidas son: "+perdidas+" hubieron estos empates "+empates);
+            let mensaje = "";
+            if (victorias === 3) {
+                mensaje = "Eres el Ganador con: "+ victorias+" victorias" 
+            }else if(perdidas === 3){
+                mensaje = "Gano el oponente con: "+ victorias+" victorias" 
+            }else{
+                mensaje = "el resultado es, tus victorias "+victorias+" tus perdidas: "+perdidas+" hubieron estos empates: "+empates
+            }
+            return mensaje;
         }
+        alert(ganador(victorias, perdidas, empates));
         
     </script>
 </body>
