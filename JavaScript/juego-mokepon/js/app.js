@@ -1,7 +1,7 @@
 alert("hola, mundo cruel");
 
 function selecionarMascota() {
-    alert("Mascota Seleccionada")
+    return alert("Mascota Seleccionada")
 }
-let butonMascota = document.querySelector("#buton-mascota");
-buscarMascota.addEventListener('click', seleccionarMascota());
+let buscarMascota = document.querySelector("#boton-mascota");
+buscarMascota.addEventListener('click', selecionarMascota);
