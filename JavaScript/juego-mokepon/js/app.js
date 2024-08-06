@@ -15,17 +15,39 @@ function selecionarMascota() {
     let spanMascotaJugador = document.querySelector ("#mascota-jugador");
 
     if(inputHipodoge.checked)
-        return spanMascotaJugador.innerHTML = "Hipodoge";
+        spanMascotaJugador.innerHTML = "Hipodoge";
     else if(inputCapipepo.checked) 
-        return spanMascotaJugador.innerHTML = "Capipepo";
+        spanMascotaJugador.innerHTML = "Capipepo";
     else if(inputRatigueya.checked)
-        return spanMascotaJugador.innerHTML = "Ratigueya";
+        spanMascotaJugador.innerHTML = "Ratigueya";
     else if(inputTucapalma.checked)
-        return spanMascotaJugador.innerHTML = "Tucapalma";
+        spanMascotaJugador.innerHTML = "Tucapalma";
     else if(inputPydos.checked)
-        return spanMascotaJugador.innerHTML = "Pydos";
+        spanMascotaJugador.innerHTML = "Pydos";
     else
-        return alert("Debes seleccionar una mascota");
+        alert("Debes seleccionar una mascota");
+
+    selectEnemyPet();
+}
+
+function selectEnemyPet(){
+    let ataqueEnemigo = random(1,5);
+    let spanMascotaEnemigo = document.querySelector ('#mascota-enemigo');
+    //asignar valores a las mascotas
+    if(ataqueEnemigo == 1)
+        spanMascotaEnemigo.innerHTML = "Hipodoge";
+    else if(ataqueEnemigo ==2)
+        spanMascotaEnemigo.innerHTML = "Capipepo";
+    else if(ataqueEnemigo == 3)
+        spanMascotaEnemigo.innerHTLM = "Ratigueya";
+    else if(ataqueEnemigo == 4)
+        spanMascotaEnemigo.innerHTML = "Tucapalma";
+    else
+        spanMascotaEnemigo.innerHTML = "Pydos"
+}
+//create random function
+function random(min, max){
+    return Math.floor(Math.random() * (max-min + 1) + min);
 }
 
 window.addEventListener('load', IniciarJuego); 
