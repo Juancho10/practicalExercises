@@ -1,5 +1,6 @@
 //variable global
 let ataqueJugador;
+let ataqueEnemigo;
 
 // funcion para iniciar el juego unicamente cuando se le de clic al boton de seleccionar mascota
 function IniciarJuego(){
@@ -8,15 +9,15 @@ function IniciarJuego(){
 
     //logica ataques del juego
     let botonAgua = document.querySelector("#boton-agua");
-    botonAgua.addEventListener('clic',ataqueAgua());
-    let botonTierra = document.querySelector("boton-tierra");
-    botonTierra.addEventListener('clic', ataqueTierra());
+    botonAgua.addEventListener('click',ataqueAgua());
+    let botonTierra = document.querySelector("#boton-tierra");
+    botonTierra.addEventListener('click', ataqueTierra());
     let botonFuego = document.querySelector("#boton-fuego");
-    botonFuego.addEventListener('clic', ataqueFuego());
+    botonFuego.addEventListener('click', ataqueFuego());
     let botonGreda = document.querySelector("#boton-greda");
-    botonGreda.addEventListener('clic', ataqueGreda());
-    let botonMadera = document.querySelector("#boton-Madera");
-    botonMadera.addEventListener('clic', ataqueMadera());
+    botonGreda.addEventListener('click', ataqueGreda());
+    let botonMadera = document.querySelector("#boton-madera");
+    botonMadera.addEventListener('click', ataqueMadera());
 }
 
 function selecionarMascota() {
@@ -45,40 +46,65 @@ function selecionarMascota() {
 }
 
 function selectEnemyPet(){
-    let ataqueEnemigo = random(1,5);
+    let mascotaEnemigo = random(1,5);
     let spanMascotaEnemigo = document.querySelector ('#mascota-enemigo');
     //asignar valores a las mascotas
-    if(ataqueEnemigo == 1)
+    if(mascotaEnemigo == 1)
         spanMascotaEnemigo.innerHTML = "Hipodoge";
-    else if(ataqueEnemigo ==2)
+    else if(mascotaEnemigo ==2)
         spanMascotaEnemigo.innerHTML = "Capipepo";
-    else if(ataqueEnemigo == 3)
+    else if(mascotaEnemigo == 3)
         spanMascotaEnemigo.innerHTLM = "Ratigueya";
-    else if(ataqueEnemigo == 4)
+    else if(mascotaEnemigo == 4)
         spanMascotaEnemigo.innerHTML = "Tucapalma";
     else
         spanMascotaEnemigo.innerHTML = "Pydos"
 }
+function ataqueAleatorioEnemigo(){
+    let randomAtaque = random(1,5);
+
+    if (randomAtaque == 1) {
+        ataqueEnemigo = "FUEGO";
+        console.log("FUEGO");
+    } else if(randomAtaque == 2){
+        ataqueEnemigo = "AGUA";
+        console.log("AGUA");
+    }else if(randomAtaque == 3){
+        ataqueEnemigo = "TIERRA"
+        console.log("TIERRA");
+    }else if(randomAtaque == 4){
+        ataqueEnemigo = "GREDA";
+        console.log("GREDA");
+    }else{
+        ataqueEnemigo = "MADERA"
+        console.log("MADERA")
+    }
+}
 
 function ataqueAgua(){
     ataqueJugador = "AGUA";
-    alert(ataqueJugador)
-}
-function ataqueFuego(){
-    ataqueJugador = "FUEGO";
-    alert(ataqueJugador);
+    console.log(ataqueJugador);
+    ataqueAleatorioEnemigo();
 }
 function ataqueTierra(){
     ataqueJugador = "TIERRA";
-    alert(ataqueJugador)
+    console.log(ataqueJugador);
+    ataqueAleatorioEnemigo()
+}
+function ataqueFuego(){
+    ataqueJugador = "FUEGO";
+    console.log(ataqueJugador);
+    ataqueAleatorioEnemigo()
 }
 function ataqueGreda(){
     ataqueJugador = "GREDA";
-    alert(ataqueJugador)
+    console.log(ataqueJugador);
+    ataqueAleatorioEnemigo()
 }
 function ataqueMadera(){
     ataqueJugador = "MADERA";
-    alert(ataqueJugador)
+    console.log(ataqueJugador);
+    ataqueAleatorioEnemigo()
 }
 
 //create random function
