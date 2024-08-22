@@ -2,22 +2,23 @@
 let ataqueJugador;
 let ataqueEnemigo;
 
+
 // funcion para iniciar el juego unicamente cuando se le de clic al boton de seleccionar mascota
 function IniciarJuego(){
     let buscarMascota = document.querySelector("#boton-mascota");
     buscarMascota.addEventListener('click', selecionarMascota);
 
     //logica ataques del juego
-    let botonAgua = document.querySelector("#boton-agua");
-    botonAgua.addEventListener('click',ataqueAgua());
+    let botonAgua = document.querySelector('#boton-agua');
+    botonAgua.addEventListener('click',ataqueAgua);
     let botonTierra = document.querySelector("#boton-tierra");
-    botonTierra.addEventListener('click', ataqueTierra());
+    botonTierra.addEventListener('click', ataqueTierra);
     let botonFuego = document.querySelector("#boton-fuego");
-    botonFuego.addEventListener('click', ataqueFuego());
+    botonFuego.addEventListener('click', ataqueFuego);
     let botonGreda = document.querySelector("#boton-greda");
-    botonGreda.addEventListener('click', ataqueGreda());
+    botonGreda.addEventListener('click', ataqueGreda);
     let botonMadera = document.querySelector("#boton-madera");
-    botonMadera.addEventListener('click', ataqueMadera());
+    botonMadera.addEventListener('click', ataqueMadera);
 }
 
 function selecionarMascota() {
@@ -60,9 +61,10 @@ function selectEnemyPet(){
     else
         spanMascotaEnemigo.innerHTML = "Pydos"
 }
+
 function ataqueAleatorioEnemigo(){
     let randomAtaque = random(1,5);
-
+    
     if (randomAtaque == 1) {
         ataqueEnemigo = "FUEGO";
         console.log("FUEGO");
@@ -86,6 +88,7 @@ function ataqueAgua(){
     console.log(ataqueJugador);
     ataqueAleatorioEnemigo();
 }
+
 function ataqueTierra(){
     ataqueJugador = "TIERRA";
     console.log(ataqueJugador);
