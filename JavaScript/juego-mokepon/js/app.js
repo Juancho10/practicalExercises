@@ -81,6 +81,8 @@ function ataqueAleatorioEnemigo(){
         ataqueEnemigo = "MADERA"
         console.log("MADERA")
     }
+
+    gameMessage();
 }
 
 function ataqueAgua(){
@@ -108,6 +110,16 @@ function ataqueMadera(){
     ataqueJugador = "MADERA";
     console.log(ataqueJugador);
     ataqueAleatorioEnemigo()
+}
+
+function gameMessage(){
+    let sectionMessage = document.querySelector('#mensajes');
+    
+    let message = document.createElement('p');
+
+    message.innerHTML= "Estas atacando con "+ ataqueJugador +" tu enemigo esta atacando con "+ ataqueEnemigo + " PENDIENTE.";
+
+    sectionMessage.appendChild(message);
 }
 
 //create random function
