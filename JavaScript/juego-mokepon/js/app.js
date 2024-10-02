@@ -15,18 +15,12 @@ function IniciarJuego(){
     botonTierra.addEventListener('click', ataqueTierra);
     let botonFuego = document.querySelector("#boton-fuego");
     botonFuego.addEventListener('click', ataqueFuego);
-    let botonGreda = document.querySelector("#boton-greda");
-    botonGreda.addEventListener('click', ataqueGreda);
-    let botonMadera = document.querySelector("#boton-madera");
-    botonMadera.addEventListener('click', ataqueMadera);
 }
 
 function selecionarMascota() {
     const inputHipodoge = document.querySelector("#hipodoge");
     const inputCapipepo = document.querySelector("#capipepo");
     const inputRatigueya = document.querySelector("#ratigueya");
-    const inputTucapalma = document.querySelector("#tucapalma");
-    const inputPydos = document.querySelector("#pydos");
     let spanMascotaJugador = document.querySelector ("#mascota-jugador");
 
     if(inputHipodoge.checked)
@@ -35,10 +29,6 @@ function selecionarMascota() {
         spanMascotaJugador.innerHTML = "Capipepo";
     else if(inputRatigueya.checked)
         spanMascotaJugador.innerHTML = "Ratigueya";
-    else if(inputTucapalma.checked)
-        spanMascotaJugador.innerHTML = "Tucapalma";
-    else if(inputPydos.checked)
-        spanMascotaJugador.innerHTML = "Pydos";
     else
         alert("Debes seleccionar una mascota");
 
@@ -47,19 +37,16 @@ function selecionarMascota() {
 }
 
 function selectEnemyPet(){
-    let mascotaEnemigo = random(1,5);
+    let mascotaEnemigo = random(1,3);
     let spanMascotaEnemigo = document.querySelector ('#mascota-enemigo');
     //asignar valores a las mascotas
     if(mascotaEnemigo == 1)
         spanMascotaEnemigo.innerHTML = "Hipodoge";
-    else if(mascotaEnemigo ==2)
+    else if(mascotaEnemigo == 2)
         spanMascotaEnemigo.innerHTML = "Capipepo";
-    else if(mascotaEnemigo == 3)
-        spanMascotaEnemigo.innerHTLM = "Ratigueya";
-    else if(mascotaEnemigo == 4)
-        spanMascotaEnemigo.innerHTML = "Tucapalma";
     else
-        spanMascotaEnemigo.innerHTML = "Pydos"
+        spanMascotaEnemigo.innerHTLM = "Ratigueya";
+    
 }
 
 function ataqueAleatorioEnemigo(){
@@ -71,18 +58,11 @@ function ataqueAleatorioEnemigo(){
     } else if(randomAtaque == 2){
         ataqueEnemigo = "AGUA";
         console.log("AGUA");
-    }else if(randomAtaque == 3){
+    }else{
         ataqueEnemigo = "TIERRA"
         console.log("TIERRA");
-    }else if(randomAtaque == 4){
-        ataqueEnemigo = "GREDA";
-        console.log("GREDA");
-    }else{
-        ataqueEnemigo = "MADERA"
-        console.log("MADERA")
     }
-
-    gameMessage();
+    battleRoyal();
 }
 
 function ataqueAgua(){
@@ -101,23 +81,22 @@ function ataqueFuego(){
     console.log(ataqueJugador);
     ataqueAleatorioEnemigo()
 }
-function ataqueGreda(){
-    ataqueJugador = "GREDA";
-    console.log(ataqueJugador);
-    ataqueAleatorioEnemigo()
-}
-function ataqueMadera(){
-    ataqueJugador = "MADERA";
-    console.log(ataqueJugador);
-    ataqueAleatorioEnemigo()
+function battleRoyal(){
+    if(ataqueJugador == ataqueEnemigo){
+        console.log("empate");
+    }else if(ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA" || ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO" || ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA"){
+        gameMessage("GANASTE");
+    }else{
+        gameMessage("PERDISTE");
+    }
 }
 
-function gameMessage(){
+function gameMessage(resultBattle){
     let sectionMessage = document.querySelector('#mensajes');
     
     let message = document.createElement('p');
 
-    message.innerHTML= "Estas atacando con "+ ataqueJugador +" tu enemigo esta atacando con "+ ataqueEnemigo + " PENDIENTE.";
+    message.innerHTML= "Estas atacando con "+ ataqueJugador +" tu enemigo esta atacando con "+ ataqueEnemigo + " resultado " + resultBattle;
 
     sectionMessage.appendChild(message);
 }
