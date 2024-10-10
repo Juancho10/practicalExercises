@@ -1,6 +1,8 @@
 //variable global
 let ataqueJugador;
 let ataqueEnemigo;
+let vidasJugador = 3;
+let vidasEnemigo = 3;
 
 
 // funcion para iniciar el juego unicamente cuando se le de clic al boton de seleccionar mascota
@@ -82,13 +84,37 @@ function ataqueFuego(){
     ataqueAleatorioEnemigo()
 }
 function battleRoyal(){
+    let spanVidasJugador = document.querySelector('#vidas-jugador');
+    let spanVidasEnemigo = document.querySelector('#vidas-enemigo');
     if(ataqueJugador == ataqueEnemigo){
         console.log("empate");
     }else if(ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA" || ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO" || ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA"){
         gameMessage("GANASTE");
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo;
     }else{
         gameMessage("PERDISTE");
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador;
     }
+
+    resultadoEndBattle();
+}
+
+function resultadoEndBattle(){
+    if(vidasJugador === 0)
+        gameEndMessage("Tus vidas terminaron y perdiste 😢")
+    else if(vidasEnemigo === 0)
+        gameEndMessage("Tu enemigo no tiene mas vidas Ganaste 🎉")
+}
+function gameEndMessage(resultEndBattle){
+    let sectionMessage = document.querySelector('#mensajes');
+    
+    let message = document.createElement('p');
+
+    message.innerHTML= resultEndBattle;
+
+    sectionMessage.appendChild(message);
 }
 
 function gameMessage(resultBattle){
@@ -106,4 +132,4 @@ function random(min, max){
     return Math.floor(Math.random() * (max-min + 1) + min);
 }
 
-window.addEventListener('load', IniciarJuego); 
+window.addEventListener('load', IniciarJuego);
