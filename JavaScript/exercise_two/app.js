@@ -12,13 +12,18 @@ export function createMagicPotion (potions, target){
         console.log(complement);
         
         //calcular que el complemento se encuentre en el array de posiones
-        seen[complement];
-        console.log(seen);
+        if(seen[complement] != undefined){
+            return [seen[complement], i]; // [1,2]
+        }
+        // se guarda la posición actual si es undefined
+        seen[currentPotion] = i; 
     }
-    
+    console.log(seen);
 }
 
 const potions = [1, 2, 3];
 const target = 5;
 
-createMagicPotion(potions, target);
+const result = createMagicPotion(potions, target); //[1,2]
+
+console.log(result);
