@@ -1,0 +1,25 @@
+{
+  "name": "exoplanetas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server . -c-1"
+  },
+  "keywords": [],
+  "author": "Juancho10",
+  "license": "ISC",
+  "description": "exercise-phisyc",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juancho10/practicalExercises.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Juancho10/practicalExercises/issues"
+  },
+  "homepage": "https://github.com/Juancho10/practicalExercises#readme",
+  "dependencies": {
+    "three": "^0.169.0",
+    "http-server": "^14.1.0"
+  }
+}

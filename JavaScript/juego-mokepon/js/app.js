@@ -17,6 +17,10 @@ function IniciarJuego(){
     botonTierra.addEventListener('click', ataqueTierra);
     let botonFuego = document.querySelector("#boton-fuego");
     botonFuego.addEventListener('click', ataqueFuego);
+
+    //reinicio del juego
+    let botonReset = document.querySelector('#boton-reiniciar')
+    botonReset.addEventListener('click,', )
 }
 
 function selecionarMascota() {
