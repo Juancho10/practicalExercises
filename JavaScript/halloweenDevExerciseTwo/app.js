@@ -27,7 +27,7 @@ function battleExample(zombies, humans){
             console.log(result.toString()+"h");
         }else{
             result = zombie[i]-human[i]
-            console.log(result.toString()+"z");
+            console.log(result.toString+"z");
         }
 
 
@@ -45,8 +45,8 @@ function battleExample(zombies, humans){
     console.log(resultTest);*/
     
 }
-const a = "183";
-const b = "779";
+const a = "123";
+const b = "789";
 
 battleExample(a,b);
 
