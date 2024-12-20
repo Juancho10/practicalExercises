@@ -4,49 +4,35 @@ function battleHorde(zombies, humans) {
 }
 
 function battleExample(zombies, humans){
-    /*zombiesNum = parseInt(zombies); 
-    humansNum = parseInt(humans);
-    console.log("value zombie is: "+zombiesNum);
-    console.log("value human is: "+humansNum);*/
-    const zombie = {};
-    const human = {};
+    let zombie = 0;
+    let human = 0;
 
 
 
     for (let i = 0; i < zombies.length; i++) {
-        const currentPotitionZombie = parseInt(zombies[i]);
-        const currentPotitionHuman = parseInt(humans[i]);
-        let result;
-        console.log("this is value of zombies: "+currentPotitionZombie);
-        zombie[i] = currentPotitionZombie;// valor de zombie por posición
+        const currentPotitionZombie = Number(zombies[i]);//valor en cada posición de zombies
+        const currentPotitionHuman = Number(humans[i]);//valor en cada posición de humans
+        console.log(`la el valor del zombie es: ${currentPotitionZombie} y el del humano es ${currentPotitionHuman}`);
+        zombie += currentPotitionZombie;
+        human += currentPotitionHuman;
 
-        human[i] = currentPotitionHuman;// valor de human por posicion
 
-        if(human[i]>zombie[i]){
-            result = human[i]-zombie[i]
+        /*
+        if(human>zombie[i]){
+            human += humans[i]-zombies[i]
             console.log(result.toString()+"h");
         }else{
             result = zombie[i]-human[i]
             console.log(result.toString+"z");
-        }
-
-
+        }*/
     }
-    //console.log(zombie['0']);
+    console.log(zombie)
+    console.log(human);
     
-    /*for (let i = 0; i < humans.length; i++) {
-        const currentPotitionHuman = parseInt(humans[i]);
-        console.log("this is value of human: "+currentPotitionHuman);
-        human[i] = currentPotitionHuman;
-    }*/
-    //console.log(human['0']);
-
-    /*const resultTest = human['0']-zombie['0']
-    console.log(resultTest);*/
     
 }
-const a = "123";
-const b = "789";
+const a = "242";
+const b = "334";
 
 battleExample(a,b);
 
