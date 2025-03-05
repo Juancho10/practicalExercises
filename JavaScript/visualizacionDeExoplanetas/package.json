@@ -21,5 +21,7 @@
   "dependencies": {
     "three": "^0.169.0",
     "http-server": "^14.1.0"
-  }
+  },
+  "devDependencies": {},
+  "type": "commonjs"
 }
